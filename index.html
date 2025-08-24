@@ -112,20 +112,6 @@
             }
         }
 
-        .dove {
-            display: inline-block;
-            font-size: 1.5em;
-            margin: 0 10px;
-            animation: doveFloat 3s ease-in-out infinite;
-            text-shadow: 0 0 20px #00ff88;
-        }
-
-        @keyframes doveFloat {
-            0%, 100% { transform: translateY(0px) rotate(-2deg); }
-            33% { transform: translateY(-10px) rotate(2deg); }
-            66% { transform: translateY(-5px) rotate(-1deg); }
-        }
-
         .section {
             padding: 4rem 0;
             margin: 2rem 0;
@@ -136,19 +122,6 @@
             color: #00ff88;
             margin-bottom: 2rem;
             text-align: center;
-            text-shadow: 0 0 30px #00ff88;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '🕊️';
-            margin-left: 15px;
-            animation: titleDove 2s ease-in-out infinite;
-        }
-
-        @keyframes titleDove {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
         }
 
         .content-box {
@@ -161,22 +134,6 @@
             box-shadow: 0 10px 30px rgba(0,255,136,0.2);
             position: relative;
             overflow: hidden;
-        }
-
-        .content-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,255,136,0.1), transparent);
-            animation: shimmer 4s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         .content-box p {
@@ -210,25 +167,10 @@
             box-shadow: 0 20px 45px rgba(0,255,136,0.4);
         }
 
-        .stat-card::before {
-            content: '🕊️';
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            animation: cardDove 3s ease-in-out infinite;
-        }
-
-        @keyframes cardDove {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.2) rotate(15deg); }
-        }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
             color: #00ff88;
-            text-shadow: 0 0 25px #00ff88;
             display: block;
             margin-bottom: 1rem;
         }
@@ -270,7 +212,6 @@
 
         .new-system .system-title {
             color: #00ff88;
-            text-shadow: 0 0 20px #00ff88;
         }
 
         .feature-list {
@@ -293,15 +234,10 @@
         }
 
         .new-system .feature-list li::before {
-            content: '🕊️';
+            content: '✅';
             position: absolute;
             left: 0;
-            animation: listDove 2s ease-in-out infinite;
-        }
-
-        @keyframes listDove {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            color: #00ff88;
         }
 
         .highlight-section {
@@ -313,24 +249,6 @@
             text-align: center;
             box-shadow: 0 20px 40px rgba(0,255,136,0.4);
             position: relative;
-        }
-
-        .highlight-section::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #00ff88, #40ff40, #00ff88);
-            border-radius: 20px;
-            z-index: -1;
-            animation: borderGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes borderGlow {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
         }
 
         .big-text {
@@ -381,9 +299,15 @@
             margin: 1rem 0;
         }
 
-        .dove-line .dove {
+        .dove {
             margin: 0 15px;
-            animation-delay: var(--delay, 0s);
+            animation: doveFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes doveFloat {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            33% { transform: translateY(-10px) rotate(2deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
         }
 
         @media (max-width: 768px) {
@@ -416,7 +340,7 @@
             <h2 class="section-title">This isn't just crypto native volume</h2>
             <div class="content-box">
                 <p>We are now seeing financial institutions begin to adopt stablecoins too. These include fintech companies like Stripe, Robinhood and others, some of the most important players in today's traditional financial markets.</p>
-                <p>Many of them have always relied heavily on the existing financial system to operate but that is starting to change. They are realizing that stablecoins are simply a better way to do things <span class="dove">🕊️</span></p>
+                <p>Many of them have always relied heavily on the existing financial system to operate but that is starting to change. They are realizing that stablecoins are simply a better way to do things</p>
             </div>
         </div>
     </section>
@@ -486,7 +410,7 @@
                 <p>There is a payment processor in one country then another one in the destination country, same for the banks and gateways, all of them take their own cut, all of them add friction.</p>
                 
                 <div class="highlight-section">
-                    <div class="big-text">The result? <span class="dove">🕊️</span></div>
+                    <div class="big-text">The result?</div>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-number">3-6</div>
@@ -570,12 +494,12 @@
             <div class="big-text"><strong>It is a fundamental shift in how financial systems are going to operate</strong></div>
             
             <div class="dove-line">
-                <span class="dove" style="--delay: 0s">🕊️</span>
-                <span class="dove" style="--delay: 0.4s">🕊️</span>
-                <span class="dove" style="--delay: 0.8s">🕊️</span>
+                <span class="dove">🕊️</span>
+                <span class="dove">🕊️</span>
+                <span class="dove">🕊️</span>
             </div>
             
-            <div class="big-text">And the crazy part is we are still early <span class="dove">🕊️</span></div>
+            <div class="big-text">And the crazy part is we are still early</div>
             <div class="final-trillion">TRILLIONS</div>
             <div class="big-text">We're talking about <span class="trillion">MULTI-TRILLION</span> dollar opportunities in the next decade</div>
         </div>
@@ -630,33 +554,6 @@
         document.head.appendChild(style);
 
         createParticles();
-
-        // Add some random dove sparkles
-        function addDoveSpark() {
-            const dove = document.createElement('div');
-            dove.textContent = '🕊️';
-            dove.style.position = 'fixed';
-            dove.style.left = Math.random() * window.innerWidth + 'px';
-            dove.style.top = Math.random() * window.innerHeight + 'px';
-            dove.style.fontSize = '1.5rem';
-            dove.style.pointerEvents = 'none';
-            dove.style.zIndex = '100';
-            dove.style.textShadow = '0 0 20px #00ff88';
-            dove.style.animation = 'doveFloat 3s ease-out forwards';
-            
-            document.body.appendChild(dove);
-            
-            setTimeout(() => {
-                dove.remove();
-            }, 3000);
-        }
-
-        // Add random doves occasionally
-        setInterval(() => {
-            if (Math.random() < 0.3) {
-                addDoveSpark();
-            }
-        }, 3000);
     </script>
 </body>
 </html>
