@@ -3,434 +3,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Plasma - TRILLIONS & Doves</title>
+    <title>Why Stablecoins Are Quietly Disrupting the Financial System</title>
     <style>
-        body {
+        * {
             margin: 0;
-            padding: 20px;
-            background: #000;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-    </style>
-</head>
-<body>
-    <div class="plasma-container">
-        <div class="energy-rings"></div>
-        <div class="plasma-overlay"></div>
-        <div class="floating-particles" id="particles"></div>
-        
-        <div class="content-wrapper">
-            <div class="trillions-text">TRILLIONS</div>
-            
-            <div class="dove-container">
-                <span class="dove">🕊️</span>
-                <span class="dove">🕊️</span>
-                <span class="dove">🕊️</span>
-                <span class="dove">🕊️</span>
-                <span class="dove">🕊️</span>
-            </div>
-            
-            <div class="subtitle">Financial Revolution</div>
-            <div class="github-text">Stablecoins • DeFi • Future</div>
-        </div>
-    </div>
-
-    <script>
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-                container.appendChild(particle);
-            }
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        // Initialize particles
-        createParticles();
-
-        // Add random sparks
-        function addSpark() {
-            const container = document.querySelector('.plasma-container');
-            const spark = document.createElement('div');
-            spark.style.position = 'absolute';
-            spark.style.width = '2px';
-            spark.style.height = '2px';
-            spark.style.background = '#00ff88';
-            spark.style.borderRadius = '50%';
-            spark.style.boxShadow = '0 0 15px #00ff88';
-            spark.style.left = Math.random() * 100 + '%';
-            spark.style.top = Math.random() * 100 + '%';
-            spark.style.pointerEvents = 'none';
-            spark.style.animation = 'sparkle 1s ease-out forwards';
-            
-            container.appendChild(spark);
-            
-            setTimeout(() => {
-                spark.remove();
-            }, 1000);
-        }
-
-        // Add CSS for sparkle animation
-        const sparkleCSS = `
-            @keyframes sparkle {
-                0% {
-                    transform: scale(0);
-                    opacity: 1;
-                }
-                50% {
-                    transform: scale(1);
-                    opacity: 1;
-                }
-                100% {
-                    transform: scale(0);
-                    opacity: 0;
-                }
-            }
-        `;
-        
-        const style = document.createElement('style');
-        style.textContent = sparkleCSS;
-        document.head.appendChild(style);
-
-        // Add sparks periodically
-        setInterval(addSpark, 500);
-
-        // Click to download/save
-        document.querySelector('.plasma-container').addEventListener('click', function() {
-            // This would trigger download in a real scenario
-            console.log('Ready for GitHub profile!');
-        });
-    </script>
-</body>
-</html>
-
-        .plasma-container {
-            width: 800px;
-            height: 400px;
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            background: linear-gradient(45deg, #000000, #0d2818, #1a4d2e, #000000);
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #0f3a1f, #1a5c2e, #0a2415);
             background-size: 400% 400%;
-            animation: plasmaFlow 4s ease-in-out infinite;
-            border: 3px solid #00ff88;
-            box-shadow: 
-                0 0 30px #00ff88,
-                inset 0 0 50px rgba(0,255,136,0.2);
+            animation: backgroundShift 10s ease-in-out infinite;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        @keyframes plasmaFlow {
-            0%, 100% { 
-                background-position: 0% 50%;
-                box-shadow: 
-                    0 0 30px #00ff88,
-                    inset 0 0 50px rgba(0,255,136,0.2);
-            }
-            25% { 
-                background-position: 100% 0%;
-                box-shadow: 
-                    0 0 40px #40ff40,
-                    inset 0 0 60px rgba(64,255,64,0.3);
-            }
-            50% { 
-                background-position: 0% 100%;
-                box-shadow: 
-                    0 0 50px #80ff80,
-                    inset 0 0 70px rgba(128,255,128,0.4);
-            }
-            75% { 
-                background-position: 100% 50%;
-                box-shadow: 
-                    0 0 40px #00ff88,
-                    inset 0 0 60px rgba(0,255,136,0.3);
-            }
+        @keyframes backgroundShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
-        .plasma-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(
-                ellipse at 30% 20%, 
-                rgba(0,255,136,0.4) 0%, 
-                transparent 40%
-            ),
-            radial-gradient(
-                ellipse at 70% 80%, 
-                rgba(64,255,64,0.3) 0%, 
-                transparent 40%
-            ),
-            radial-gradient(
-                ellipse at 20% 80%, 
-                rgba(128,255,128,0.2) 0%, 
-                transparent 40%
-            );
-            animation: plasmaWave 6s ease-in-out infinite;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        @keyframes plasmaWave {
-            0%, 100% { 
-                background: radial-gradient(
-                    ellipse at 30% 20%, 
-                    rgba(0,255,136,0.4) 0%, 
-                    transparent 40%
-                ),
-                radial-gradient(
-                    ellipse at 70% 80%, 
-                    rgba(64,255,64,0.3) 0%, 
-                    transparent 40%
-                ),
-                radial-gradient(
-                    ellipse at 20% 80%, 
-                    rgba(128,255,128,0.2) 0%, 
-                    transparent 40%
-                );
-            }
-            33% { 
-                background: radial-gradient(
-                    ellipse at 80% 30%, 
-                    rgba(64,255,64,0.4) 0%, 
-                    transparent 40%
-                ),
-                radial-gradient(
-                    ellipse at 20% 70%, 
-                    rgba(128,255,128,0.3) 0%, 
-                    transparent 40%
-                ),
-                radial-gradient(
-                    ellipse at 60% 10%, 
-                    rgba(0,255,136,0.2) 0%, 
-                    transparent 40%
-                );
-            }
-            66% { 
-                background: radial-gradient(
-                    ellipse at 40% 90%, 
-                    rgba(128,255,128,0.4) 0%, 
-                    transparent 40%
-                ),
-                radial-gradient(
-                    ellipse at 80% 10%, 
-                    rgba(0,255,136,0.3) 0%, 
-                    transparent 40%
-                ),
-                radial-gradient(
-                    ellipse at 10% 40%, 
-                    rgba(64,255,64,0.2) 0%, 
-                    transparent 40%
-                );
-            }
-        }
-
-        .content-wrapper {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            position: relative;
+            padding: 2rem 0;
         }
 
-        .trillions-text {
-            font-size: 4rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0,255,136,0.15) 0%, transparent 70%);
+            animation: heroGlow 6s ease-in-out infinite;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .main-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #00ff88, #40ff40, #ffffff, #00ff88);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 4s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes textShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-stats {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .trillion {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.3em;
+            text-shadow: 
+                0 0 20px #00ff88,
+                0 0 30px #00ff88,
+                0 0 40px #00ff88;
+            animation: trillionPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes trillionPulse {
+            0%, 100% { 
+                transform: scale(1);
+                text-shadow: 
+                    0 0 20px #00ff88,
+                    0 0 30px #00ff88;
+            }
+            50% { 
+                transform: scale(1.05);
+                text-shadow: 
+                    0 0 30px #00ff88,
+                    0 0 40px #00ff88,
+                    0 0 50px #00ff88;
+            }
+        }
+
+        .dove {
+            display: inline-block;
+            font-size: 1.5em;
+            margin: 0 10px;
+            animation: doveFloat 3s ease-in-out infinite;
+            text-shadow: 0 0 20px #00ff88;
+        }
+
+        @keyframes doveFloat {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            33% { transform: translateY(-10px) rotate(2deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+
+        .section {
+            padding: 4rem 0;
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: #00ff88;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 0 30px #00ff88;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '🕊️';
+            margin-left: 15px;
+            animation: titleDove 2s ease-in-out infinite;
+        }
+
+        @keyframes titleDove {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .content-box {
+            background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,0,0,0.6));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0,255,136,0.3);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,255,136,0.1), transparent);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .content-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0,255,136,0.15), rgba(0,0,0,0.8));
+            border: 2px solid #00ff88;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,255,136,0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0,255,136,0.4);
+        }
+
+        .stat-card::before {
+            content: '🕊️';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            animation: cardDove 3s ease-in-out infinite;
+        }
+
+        @keyframes cardDove {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(15deg); }
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00ff88;
+            text-shadow: 0 0 25px #00ff88;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .old-system {
+            background: linear-gradient(135deg, rgba(100,100,100,0.2), rgba(0,0,0,0.8));
+            border: 2px solid #666666;
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .new-system {
+            background: linear-gradient(135deg, rgba(0,255,136,0.2), rgba(0,0,0,0.6));
+            border: 2px solid #00ff88;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,255,136,0.3);
+            position: relative;
+        }
+
+        .system-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .old-system .system-title {
+            color: #cccccc;
+        }
+
+        .new-system .system-title {
+            color: #00ff88;
+            text-shadow: 0 0 20px #00ff88;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .old-system .feature-list li::before {
+            content: '❌';
+            position: absolute;
+            left: 0;
+            color: #ff6666;
+        }
+
+        .new-system .feature-list li::before {
+            content: '🕊️';
+            position: absolute;
+            left: 0;
+            animation: listDove 2s ease-in-out infinite;
+        }
+
+        @keyframes listDove {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .highlight-section {
+            background: linear-gradient(135deg, rgba(0,255,136,0.2), rgba(0,0,0,0.4));
+            border: 3px solid #00ff88;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,255,136,0.4);
+            position: relative;
+        }
+
+        .highlight-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ff88, #40ff40, #00ff88);
+            border-radius: 20px;
+            z-index: -1;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .big-text {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .final-section {
+            text-align: center;
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,0,0,0.8));
+            border-radius: 25px;
+            margin: 3rem 0;
+        }
+
+        .final-trillion {
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: bold;
             color: #00ff88;
             text-shadow: 
-                0 0 10px #00ff88,
-                0 0 20px #00ff88,
                 0 0 30px #00ff88,
-                0 0 40px #00ff88,
-                0 0 50px #00ff88;
-            animation: trillionsGlow 2s ease-in-out infinite alternate;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+                0 0 50px #00ff88,
+                0 0 70px #00ff88;
+            animation: finalGlow 2s ease-in-out infinite alternate;
+            margin: 2rem 0;
         }
 
-        @keyframes trillionsGlow {
+        @keyframes finalGlow {
             from {
                 text-shadow: 
-                    0 0 10px #00ff88,
-                    0 0 20px #00ff88,
-                    0 0 30px #00ff88;
+                    0 0 30px #00ff88,
+                    0 0 50px #00ff88;
                 transform: scale(1);
             }
             to {
                 text-shadow: 
-                    0 0 20px #00ff88,
-                    0 0 30px #00ff88,
-                    0 0 40px #00ff88,
                     0 0 50px #00ff88,
-                    0 0 60px #00ff88;
-                transform: scale(1.05);
+                    0 0 70px #00ff88,
+                    0 0 90px #00ff88;
+                transform: scale(1.02);
             }
         }
 
-        .dove-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin: 2rem 0;
+        .dove-line {
+            font-size: 2rem;
+            margin: 1rem 0;
         }
 
-        .dove {
-            font-size: 3rem;
-            color: #ffffff;
-            text-shadow: 
-                0 0 15px #00ff88,
-                0 0 25px #00ff88,
-                0 0 35px #00ff88;
-            animation: doveFloat 2s ease-in-out infinite;
+        .dove-line .dove {
+            margin: 0 15px;
+            animation-delay: var(--delay, 0s);
         }
 
-        .dove:nth-child(1) { animation-delay: 0s; }
-        .dove:nth-child(2) { animation-delay: 0.3s; }
-        .dove:nth-child(3) { animation-delay: 0.6s; }
-        .dove:nth-child(4) { animation-delay: 0.9s; }
-        .dove:nth-child(5) { animation-delay: 1.2s; }
-
-        @keyframes doveFloat {
-            0%, 100% { 
-                transform: translateY(0px) rotate(-5deg) scale(1); 
-                text-shadow: 
-                    0 0 15px #00ff88,
-                    0 0 25px #00ff88;
+        @media (max-width: 768px) {
+            .comparison-section {
+                grid-template-columns: 1fr;
             }
-            33% { 
-                transform: translateY(-20px) rotate(5deg) scale(1.1); 
-                text-shadow: 
-                    0 0 25px #00ff88,
-                    0 0 35px #00ff88,
-                    0 0 45px #00ff88;
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
-            66% { 
-                transform: translateY(-10px) rotate(-3deg) scale(1.05); 
-                text-shadow: 
-                    0 0 20px #00ff88,
-                    0 0 30px #00ff88,
-                    0 0 40px #00ff88;
+            
+            .content-box {
+                padding: 1.5rem;
             }
         }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1 class="main-title">Why Stablecoins Are Quietly Disrupting the Financial System</h1>
+            <div class="hero-stats">
+                There is over <span class="trillion">$16 TRILLION</span> <span class="dove">🕊️</span> in stablecoin volume per year today
+            </div>
+        </div>
+    </div>
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: #80ff80;
-            text-shadow: 0 0 10px #40ff40;
-            animation: subtitlePulse 3s ease-in-out infinite;
-            margin-bottom: 1rem;
-        }
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">This isn't just crypto native volume</h2>
+            <div class="content-box">
+                <p>We are now seeing financial institutions begin to adopt stablecoins too. These include fintech companies like Stripe, Robinhood and others <span class="dove">🕊️</span> some of the most important players in today's traditional financial markets.</p>
+                <p>Many of them have always relied heavily on the existing financial system to operate but that is starting to change. They are realizing that stablecoins are simply a better way to do things <span class="dove">🕊️</span></p>
+            </div>
+        </div>
+    </section>
 
-        @keyframes subtitlePulse {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
-        }
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">So why is this shift happening now?</h2>
+            <div class="content-box">
+                <p>The key reason is that <strong>the infrastructure has evolved</strong>. For the first time it is now possible to move money efficiently without needing to spend large amounts of money on the process itself.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">💚</span>
+                        <p><strong>It is CHEAP</strong></p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">⚡</span>
+                        <p><strong>It is FAST</strong></p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">✅</span>
+                        <p><strong>Most importantly it is WORKING</strong></p>
+                    </div>
+                </div>
+                
+                <p>And even with this massive <span class="trillion">$16 trillion</span> yearly volume we are still early <span class="dove">🕊️</span> Now imagine where this could go in the next 10 years.</p>
+            </div>
+        </div>
+    </section>
 
-        .floating-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The current financial system is too outdated</h2>
+            <div class="content-box">
+                <p>Take a simple example: buying tickets at a stadium with your credit card seems easy on the surface right? But behind the scenes there is an entire stack of intermediaries involved just to make that one transaction work <span class="dove">🕊️</span></p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">🏪</div>
+                        <p>Point of sale (POS) system</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">💳</div>
+                        <p>Payment processor</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">🏦</div>
+                        <p>Issuing bank</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">🏛️</div>
+                        <p>Acquiring bank and other service providers</p>
+                    </div>
+                </div>
+                
+                <p><strong>Each of these players takes a cut from the transaction</strong> <span class="dove">🕊️</span> that could be multiple percentage points in fees just to let you buy a ticket.</p>
+                <p>And remember this is just for a domestic transaction within the same country.</p>
+            </div>
+        </div>
+    </section>
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #00ff88;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #00ff88;
-            animation: floatParticle 8s linear infinite;
-        }
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">International transactions are even worse</h2>
+            <div class="content-box">
+                <p>Now imagine the same transaction internationally <span class="dove">🕊️</span> When you try to send or receive money across borders that entire stack gets duplicated on the other side.</p>
+                <p>There is a payment processor in one country then another one in the destination country <span class="dove">🕊️</span> same for the banks and gateways, all of them take their own cut, all of them add friction.</p>
+                
+                <div class="highlight-section">
+                    <div class="big-text">The result? <span class="dove">🕊️</span></div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">3-6</div>
+                            <p><strong>DAYS</strong> just to move money from one country to another</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">7%+</div>
+                            <p>You can <strong>LOSE</strong> of the transaction value in fees</p>
+                        </div>
+                    </div>
+                    <div class="big-text">That is insane especially in 2025 <span class="dove">🕊️</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        @keyframes floatParticle {
-            0% {
-                transform: translateY(100%) translateX(0px) scale(0);
-                opacity: 0;
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Stablecoins solve all this</h2>
+            <div class="content-box">
+                <p>With stablecoins and the infrastructure now being built around them you can settle that same transaction <span class="dove">🕊️</span></p>
+                
+                <div class="comparison-section">
+                    <div class="old-system">
+                        <div class="system-title">❌ Old System</div>
+                        <ul class="feature-list">
+                            <li>You need 10 entities to approve and process a payment</li>
+                            <li>You need to pay 3% fees locally</li>
+                            <li>Or 7%+ fees internationally</li>
+                            <li>You need to wait for days</li>
+                            <li>Multiple unnecessary middlemen</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="new-system">
+                        <div class="system-title">✅ With Stablecoins</div>
+                        <ul class="feature-list">
+                            <li>In minutes</li>
+                            <li>At near zero cost globally</li>
+                            <li>Without duplicating all the intermediaries</li>
+                            <li>You just send and it arrives</li>
+                            <li>That is it <span class="dove">🕊️</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">This is what real transformation looks like</h2>
+            <div class="content-box">
+                <p>When a technology can <span class="dove">🕊️</span></p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">⚡</div>
+                        <p><strong>Make money move faster</strong></p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">💰</div>
+                        <p><strong>Make it cheaper</strong></p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">🌍</div>
+                        <p><strong>Remove borders from financial access</strong></p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">🚫</div>
+                        <p><strong>And eliminate unnecessary middlemen</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-section">
+        <div class="container">
+            <div class="big-text">That is why what we are seeing today is not just a trend <span class="dove">🕊️</span></div>
+            <div class="big-text">It is not hype <span class="dove">🕊️</span></div>
+            <div class="big-text"><strong>It is a fundamental shift in how financial systems are going to operate</strong></div>
+            
+            <div class="dove-line">
+                <span class="dove" style="--delay: 0s">🕊️</span>
+                <span class="dove" style="--delay: 0.2s">🕊️</span>
+                <span class="dove" style="--delay: 0.4s">🕊️</span>
+                <span class="dove" style="--delay: 0.6s">🕊️</span>
+                <span class="dove" style="--delay: 0.8s">🕊️</span>
+            </div>
+            
+            <div class="big-text">And the crazy part is we are still early <span class="dove">🕊️</span></div>
+            <div class="final-trillion">TRILLIONS</div>
+            <div class="big-text">Imagine where this could go in the next 10 years...</div>
+        </div>
+    </section>
+
+    <script>
+        // Add floating particles
+        function createParticles() {
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.background = '#00ff88';
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '-1';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = '100%';
+                particle.style.opacity = '0';
+                particle.style.boxShadow = '0 0 10px #00ff88';
+                
+                const duration = Math.random() * 10 + 10;
+                const delay = Math.random() * 5;
+                
+                particle.style.animation = `floatUp ${duration}s ${delay}s infinite linear`;
+                
+                document.body.appendChild(particle);
             }
-            10% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            90% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            100% {
-                transform: translateY(-20px) translateX(50px) scale(0);
-                opacity: 0;
-            }
         }
 
-        .github-text {
-            font-size: 1.2rem;
-            color: #40ff40;
-            text-shadow: 0 0 8px #00ff88;
-            margin-top: 1rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .energy-rings {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            border: 2px solid rgba(0,255,136,0.3);
-            border-radius: 50%;
-            animation: energyPulse 4s ease-in-out infinite;
-        }
-
-        .energy-rings::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
-            border: 2px solid rgba(64,255,64,0.4);
-            border-radius: 50%;
-            animation: energyPulse 3s ease-in-out infinite reverse;
-        }
-
-        .energy-rings::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            height: 400px;
-            border: 1px solid rgba(128,255,128,0.2);
-            border-radius: 50%;
-            animation: energyPulse 5s ease-in-out infinite;
-        }
-
-        @keyframes energyPulse {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.3;
+        // Add CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% {
+                    transform: translateY(0px) translateX(0px);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100vh) translateX(50px);
+                    opacity: 0;
+                }
             }
-            50% {
-                transform: translate(-50%, -50%) scale(1.1);
-                opacity: 0.8;
-            }
+        `;
+        document.head.appendChild(style);
+
+        createParticles();
+
+        // Add some random dove sparkles
+        function addDoveSpark() {
+            const dove = document.createElement('div');
+            dove.textContent = '🕊️';
+            dove.style.position = 'fixed';
+            dove.style.left = Math.random() * window.innerWidth + 'px';
+            dove.style.top = Math.random() * window.innerHeight + 'px';
+            dove.style.fontSize = '1.5rem';
+            dove.style.pointerEvents = 'none';
+            dove.style.zIndex = '100';
+            dove.style.textShadow = '0 0 20px #00ff88';
+            dove.style.animation = 'doveFloat 3s ease-out forwards';
+            
+            document.body.appendChild(dove);
+            
+            setTimeout(() => {
+                dove.remove();
+            }, 3000);
         }
+
+        // Add random doves occasionally
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                addDoveSpark();
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
